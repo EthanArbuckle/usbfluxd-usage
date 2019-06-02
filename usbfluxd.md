@@ -1,4 +1,4 @@
-Using [usbfluxd](INSERT_LINK_HERE) to establish "local" connections to remote usbmuxd instanes.
+Using [usbfluxd](INSERT_LINK_HERE) to establish "local" connections to remote usbmuxd instances.
 
 ## Disclaimer
 I am not affiliated with any of the projects that are discussed in this document. 
@@ -30,19 +30,19 @@ Each project's readme includes instructions on how to build.
 
 ###### (Server)
 
-Launch `usbfluxd` with root priveledges. `-f` prevents it from daemonizing if you want to see its output.
+Launch `usbfluxd` with root privileges. `-f` prevents it from daemonizing if you want to see its output.
 
 (From usbfluxd-master directory): `sudo src/usbfluxd`
 
 ![launch usbfluxd](img/launch_usbfluxd.png)
 
-This replaces usbmuxds socket file with usbfluxds. The next step is exposing the new socket over a tcp port so remote devices can see it.
+This replaces usbmuxd’s socket file with usbfluxd’s. The next step is exposing the new socket over a tcp port so remote devices can see it.
 
 ## Installing socat
 ###### (Server)
-[socat](https://linux.die.net/man/1/socat) (SOcket CAT) is a tool for transfering data between addresses. It will be used to expose the newly created usbfluxd socket to external devices.
+[socat](https://linux.die.net/man/1/socat) (SOcket CAT) is a tool for transferring data between addresses. It will be used to expose the newly created usbfluxd socket to external devices.
 
-The easiest way to aquire socat is via [Homebrew](https://brew.sh/).
+The easiest way to acquire socat is via [Homebrew](https://brew.sh/).
 
     brew install socat
     
